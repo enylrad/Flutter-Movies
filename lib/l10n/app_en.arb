@@ -1,0 +1,10 @@
+{
+  "appName": "Movies",
+  "@appName": {
+    "description": "App of application"
+  },
+  "homeTitle": "Movies in theaters",
+  "@homeTitle": {
+    "description": "Title of home page"
+  }
+}
