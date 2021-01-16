@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateTitle: (BuildContext context) => AppLocalizations.of(context).appName,
+      onGenerateTitle: (BuildContext context) =>
+          AppLocalizations.of(context).appName,
       initialRoute: getDefaultRoute(),
       routes: getApplicationRoutes(),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
     );
   }
-
 }

@@ -6,5 +6,9 @@
   "homeTitle": "Movies in theaters",
   "@homeTitle": {
     "description": "Title of home page"
+  },
+  "populars": "Populars",
+  "@populars": {
+    "description": "Title of populars movies"
   }
 }

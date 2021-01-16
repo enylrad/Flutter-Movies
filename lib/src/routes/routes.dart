@@ -6,4 +6,5 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     HomePage.route: (BuildContext context) => HomePage(),
   };
 }
+
 String getDefaultRoute() => HomePage.route;
