@@ -11,6 +11,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    moviesProvider.getMoviesPopulars();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).homeTitle),
@@ -54,7 +56,7 @@ class HomePage extends StatelessWidget {
 
   Widget _footer(BuildContext context) {
     return Container(
-      width: double.infinity *0.8,
+      width: double.infinity * 0.8,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -66,11 +68,14 @@ class HomePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 5.0),
-          FutureBuilder(
-              future: moviesProvider.getMoviesPopular(),
+          StreamBuilder(
+              stream: moviesProvider.moviesPopularsStream,
               builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
                 if (snapshot.hasData) {
-                  return MovieHorizontal(movies: snapshot.data);
+                  return MovieHorizontal(
+                    movies: snapshot.data,
+                    nextPage: moviesProvider.getMoviesPopulars,
+                  );
                 } else {
                   return Center(child: CircularProgressIndicator());
                 }
