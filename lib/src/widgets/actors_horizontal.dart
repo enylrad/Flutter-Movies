@@ -25,7 +25,6 @@ class ActorsHorizontal extends StatelessWidget {
   }
 
   Widget _card(BuildContext context, Actor actor) {
-
     return Container(
       margin: EdgeInsets.only(right: 15.0),
       child: Column(

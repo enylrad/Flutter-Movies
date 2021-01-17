@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:movies_flutter/src/models/movies_model.dart';
 import 'package:movies_flutter/src/providers/movies_provider.dart';
 import 'package:movies_flutter/src/widgets/actors_horizontal.dart';
@@ -120,7 +121,14 @@ class MovieDetail extends StatelessWidget {
           if (snapshot.hasData) {
             return ActorsHorizontal(actors: snapshot.data);
           } else {
-            return Center(child: CircularProgressIndicator());
+            return Center(
+                child: Center(
+              child: Lottie.asset(
+                'assets/lottie/loading-movie.json',
+                height: 100.0,
+                width: 100.0,
+              ),
+            ));
           }
         });
   }

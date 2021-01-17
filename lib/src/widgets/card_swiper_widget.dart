@@ -19,7 +19,6 @@ class CardSwiper extends StatelessWidget {
         itemWidth: _screenSize.width * 0.7,
         itemHeight: _screenSize.height * 0.45,
         itemBuilder: (BuildContext context, int index) {
-
           movies[index].uuid = '${movies[index].id}-card';
 
           return Hero(

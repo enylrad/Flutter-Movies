@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:lottie/lottie.dart';
 import 'package:movies_flutter/src/providers/movies_provider.dart';
 import 'package:movies_flutter/src/widgets/card_swiper_widget.dart';
 import 'package:movies_flutter/src/widgets/movies_horizontal.dart';
@@ -46,7 +47,11 @@ class HomePage extends StatelessWidget {
           return Container(
             height: 400.0,
             child: Center(
-              child: CircularProgressIndicator(),
+              child: Lottie.asset(
+                'assets/lottie/loading-movie.json',
+                height: 100.0,
+                width: 100.0,
+              ),
             ),
           );
         }
@@ -77,7 +82,13 @@ class HomePage extends StatelessWidget {
                     nextPage: moviesProvider.getMoviesPopulars,
                   );
                 } else {
-                  return Center(child: CircularProgressIndicator());
+                  return Center(
+                    child: Lottie.asset(
+                      'assets/lottie/loading-movie.json',
+                      height: 100.0,
+                      width: 100.0,
+                    ),
+                  );
                 }
               })
         ],

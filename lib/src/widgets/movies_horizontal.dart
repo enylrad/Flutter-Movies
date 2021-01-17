@@ -35,7 +35,6 @@ class MoviesHorizontal extends StatelessWidget {
   }
 
   Widget _card(BuildContext context, Movie movie) {
-
     movie.uuid = '${movie.id}-poster';
 
     final card = Container(
