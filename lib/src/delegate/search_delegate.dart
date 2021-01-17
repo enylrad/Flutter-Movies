@@ -76,7 +76,7 @@ class DataSearch extends SearchDelegate {
                 return ListTile(
                   leading: FadeInImage(
                     image: NetworkImage(movie.getPosterImage()),
-                    placeholder: AssetImage('assets/image/no-image.jpg'),
+                    placeholder: AssetImage('assets/images/no-image.jpg'),
                     width: 50.0,
                     fit: BoxFit.contain,
                   ),
