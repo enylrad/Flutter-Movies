@@ -70,4 +70,12 @@ class Movie {
       return 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2$posterPath';
     }
   }
+
+  getBackgroundImage() {
+    if (backdropPath == null) {
+      return 'https://farm5.staticflickr.com/4363/36346283311_74018f6e7d_o.png';
+    } else {
+      return 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2$backdropPath';
+    }
+  }
 }

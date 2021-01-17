@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:movies_flutter/src/providers/movies_provider.dart';
 import 'package:movies_flutter/src/widgets/card_swiper_widget.dart';
-import 'package:movies_flutter/src/widgets/movie_horizontal.dart';
+import 'package:movies_flutter/src/widgets/movies_horizontal.dart';
 
 class HomePage extends StatelessWidget {
   static final route = '/';
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
               stream: moviesProvider.moviesPopularsStream,
               builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
                 if (snapshot.hasData) {
-                  return MovieHorizontal(
+                  return MoviesHorizontal(
                     movies: snapshot.data,
                     nextPage: moviesProvider.getMoviesPopulars,
                   );

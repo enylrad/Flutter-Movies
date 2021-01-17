@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:movies_flutter/src/models/movies_model.dart';
+import 'package:movies_flutter/src/pages/movie_detail.dart';
 
-class MovieHorizontal extends StatelessWidget {
+class MoviesHorizontal extends StatelessWidget {
   final List<Movie> movies;
   final Function nextPage;
 
-  MovieHorizontal({@required this.movies, @required this.nextPage});
+  MoviesHorizontal({@required this.movies, @required this.nextPage});
 
   final _pageController = PageController(initialPage: 1, viewportFraction: 0.3);
 
@@ -34,7 +35,8 @@ class MovieHorizontal extends StatelessWidget {
   }
 
   Widget _card(BuildContext context, Movie movie) {
-    return Container(
+
+    final card = Container(
       margin: EdgeInsets.only(right: 15.0),
       child: Column(
         children: [
@@ -45,6 +47,7 @@ class MovieHorizontal extends StatelessWidget {
               image: NetworkImage(movie.getPosterImage()),
               fit: BoxFit.cover,
               height: 150.0,
+              width: 110.0,
             ),
           ),
           SizedBox(height: 5.0),
@@ -55,6 +58,13 @@ class MovieHorizontal extends StatelessWidget {
           ),
         ],
       ),
+    );
+
+    return GestureDetector(
+      child: card,
+      onTap: () {
+        Navigator.pushNamed(context, MovieDetail.route, arguments: movie);
+      },
     );
   }
 }
